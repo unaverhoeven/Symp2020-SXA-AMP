@@ -1,0 +1,9 @@
+{{ if (o_pagemode.is_experience_editor_editing) }}
+  {{ sc_field i_item "Image" }}
+
+{{ else }}
+  <figure class="figure">
+    <amp-img src="{{ i_item.Image.media_url }}" width="{{ i_item.Image.width }}" height="{{ i_item.Image.height }}" layout="responsive"></amp-img>
+    <figcaption>{{ i_item.Image.Description.raw }}</figcaption>
+  </figure>
+{{ end }} 

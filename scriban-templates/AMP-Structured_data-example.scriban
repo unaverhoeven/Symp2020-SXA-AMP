@@ -1,0 +1,26 @@
+{{ if (o_pagemode.is_experience_editor_editing) }}
+  <span>{{i_item.Type}}</span>
+{{ else }}
+<script type="application/ld+json">
+{
+ "@context": "http://schema.org",
+ "@type": "{{i_item.Type.raw}}",
+ "mainEntityOfPage":{
+   "@type":"WebPage",
+   "@id":"{{i_item.url}}"
+ },
+ "headline": "{{ i_item.Title.raw }}",
+ "datePublished": "{{sc_field i_item 'DatePublished' [ [ 'format', 'h:mm tt' ] ] }}",
+ "dateModified": "{{sc_field i_item 'DateModified' [ [ 'format', 'h:mm tt' ] ] }}",
+ "author": {
+   "@type": "Person",
+   "name": "{{i_item.Author.raw}}"
+ },
+ "publisher": {
+   "@type": "Organization",
+   "name": "{{i_item.Organisation.raw}}"
+ },
+ "description": "{{i_item.Description.raw}}"
+}
+</script> 
+{{ end }} 

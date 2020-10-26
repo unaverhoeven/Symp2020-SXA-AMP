@@ -1,0 +1,5 @@
+{{ if (o_pagemode.is_experience_editor_editing) }}
+  {{  i_item.Text }}
+{{ else }}
+  {{ i_item.Text | regex.replace "img" "amp-img" }}
+{{ end }}
